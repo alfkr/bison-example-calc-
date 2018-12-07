@@ -17,7 +17,7 @@ run flex:
 flex -o scanner.cc scanner.ll
 
 run bison:
-win_bison -o parser.cc parser.yy
+bison -o parser.cc parser.yy
 
 build executable:
 mkdir build
