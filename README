@@ -5,8 +5,45 @@ Example".  It is also available on line (maybe with a different version of
 Bison):
 https://www.gnu.org/software/bison/manual/html_node/A-Complete-C_002b_002b-Example.html
 
-To use it, copy this directory into some work directory, and run `make` to
-compile the executable, and try it.  It is a simple calculator which accepts
+build instructions
+
+required:
+flex 2.6.4 (other versions might work)
+bison 3.1 (other versions might work)
+
+LINUX
+
+run flex:
+flex -o scanner.cc scanner.ll
+
+run bison:
+win_bison -o parser.cc parser.yy
+
+build executable:
+mkdir build
+cd build
+cmake ../
+make install
+
+---------------------------------------------
+
+WINDOWS
+
+run flex:
+win_flex --wincompat -o scanner.cc scanner.ll
+
+run bison:
+win_bison -o parser.cc parser.yy
+
+build executable:
+md build
+cd build
+cmake -G "NMake Makefiles" ../
+nmake install
+
+---------------------------------------------
+
+It is a simple calculator which accepts
 several variable definitions, one per line, and then a single expression to
 evaluate.
 
@@ -20,6 +57,11 @@ three := 3
 (one + two * three) * two * three
 <Ctrl-d>
 42
+
+or use a input file, for example:
+cd bin
+calc.exe input.txt
+>42
 
 You may pass `-p` to activate the parser debug traces, and `-s` to activate
 the scanner's.
