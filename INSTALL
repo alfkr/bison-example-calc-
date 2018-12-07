@@ -8,51 +8,39 @@ bison 3.1 (other versions might work)
 LINUX
 
 run flex:
-
 flex -o scanner.cc scanner.ll
 
----------------------------------------------
-
 run bison:
-
-win_bison -o parser.cc parser.yy
-
----------------------------------------------
+bison -o parser.cc parser.yy
 
 build executable:
-
 mkdir build
 cd build
 cmake ../
 make install
+
+run the binary:
+cd bin
+./calc input.txt
+>42
 
 ---------------------------------------------
 
 WINDOWS
 
 run flex:
-
 win_flex --wincompat -o scanner.cc scanner.ll
 
----------------------------------------------
-
 run bison:
-
 win_bison -o parser.cc parser.yy
 
----------------------------------------------
-
 build executable:
-
 md build
 cd build
 cmake -G "NMake Makefiles" ../
 nmake install
 
----------------------------------------------
-
-Running the binary:
-
+run the binary:
 cd bin
 calc.exe input.txt
 >42

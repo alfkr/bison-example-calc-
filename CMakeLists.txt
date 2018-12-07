@@ -40,10 +40,6 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     target_compile_definitions(${PROC} PUBLIC LINUX LINUX_64) 
 endif()
 
-if (LINUX)
-    set_target_properties(${PROC} PROPERTIES PREFIX "lib")
-endif()
-
 set(INSTALL_DIR "${CMAKE_SOURCE_DIR}/bin")
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")

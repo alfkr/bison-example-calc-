@@ -25,6 +25,11 @@ cd build
 cmake ../
 make install
 
+run the binary:
+cd bin
+./calc input.txt
+>42
+
 ---------------------------------------------
 
 WINDOWS
@@ -40,6 +45,11 @@ md build
 cd build
 cmake -G "NMake Makefiles" ../
 nmake install
+
+run the binary:
+cd bin
+calc.exe input.txt
+>42
 
 ---------------------------------------------
 
@@ -57,11 +67,6 @@ three := 3
 (one + two * three) * two * three
 <Ctrl-d>
 42
-
-or use a input file, for example:
-cd bin
-calc.exe input.txt
->42
 
 You may pass `-p` to activate the parser debug traces, and `-s` to activate
 the scanner's.
