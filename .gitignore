@@ -1,0 +1,11 @@
+*.o
+*~
+*.user
+*.sdf
+*.sln
+*.vcxproj
+*.filters
+build/
+install/
+visual_studio/
+.vs/
